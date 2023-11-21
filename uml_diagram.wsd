@@ -1,0 +1,35 @@
+@startuml uml_diagram
+
+class Bank {
+    +bank_name: str    
+}
+
+class Customer {
+    +first_name: str
+    +last_name: str
+    +address: str
+    +fullname(): str
+}
+
+class Account {
+    +account_type: category
+    +balance: float
+    +account_balance(): str
+    +deposit(): str
+    +withdrawal(): str
+}
+
+class Employee {
+    +first_name = str
+    +last_name = str
+    +title = str
+    +salary = float
+    +eligible_bonus_amt(): str
+}
+
+'Associations:'
+Bank o-- "1..*" Customer
+Bank o-- "1..*" Employee
+Customer "1..*" *-- "1..*" Account: has >
+
+@enduml
