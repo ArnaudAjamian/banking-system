@@ -8,16 +8,15 @@ class Bank:
         self.bank_name = bank_name
 
 
-class Customer(Bank):
+class Customer:
 
-    def __init__(self, bank_name, first_name, last_name, address):
+    def __init__(self, first_name, last_name, address):
         
-        super().__init__(bank_name)
         self.first = first_name
         self.last = last_name
         self.address = address
 
-        # # each time an instance is generated, log the customer's name (uncomment line 21 for testing)
+        # each time an instance is generated, log the customer's name (uncomment line 21 for testing)
         # logger.info('New Customer - Full Name: {} {}'.format(self.first, self.last))
 
 
@@ -34,16 +33,16 @@ class Customer(Bank):
 
 
 
-class Account(Customer):
+class Account:
 
-    def __init__(self, bank_name, first_name, last_name, address, account_type, balance):
+    def __init__(self, customer, account_type, balance):
         
-        super().__init__(bank_name, first_name, last_name, address)
+        self.customer = customer
         self.account_type = account_type
         self.balance = balance
 
         # each time an instance is generated, log the customer's name, account type and starting balance
-        logger.info(f"Customer: {self.fullname} created a {self.account_type} account with a starting balance of ${self.balance: ,.2f}")
+        logger.info(f"Customer: {self.customer.fullname} created a {self.account_type} account with a starting balance of ${self.balance: ,.2f}")
 
     
     def account_balance(self):
@@ -93,20 +92,19 @@ class Account(Customer):
 
 
     def __repr__(self):
-        return f"Customer Name: {self.fullname}, Account Type: {self.account_type}, Balance: ${self.balance: ,.2f}"
+        return f"Customer Name: {Customer.fullname}, Account Type: {self.account_type}, Balance: ${self.balance: ,.2f}"
 
 
 
-class Employee(Bank):
+class Employee:
     
     # define Employee class attributes
     min_salary = 50000
     pct_bonus = 0.05
 
 
-    def __init__(self, bank_name, first_name, last_name, title, salary):
+    def __init__(self, first_name, last_name, title, salary):
 
-        super().__init__(bank_name)
         self.first = first_name
         self.last = last_name
         self.title = title

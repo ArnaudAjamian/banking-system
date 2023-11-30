@@ -17,7 +17,7 @@ In this project, a simple banking system was designed using Python OOP technique
 - The `Customer` class represents the customer's name and address.
 - The `Account` class represents a customer's account type, current balance and list of options (as listed in point #3 above).
 - Lastly, the `Employee` class includes an employee's name, title and salary.
-> **_NOTE:_** For testing, uncomment line 21 (from `banking_system_classes.py`) to enable logging
+> **_NOTE:_** For testing, uncomment line 20 (from `banking_system_classes.py`) to enable logging
 
 </br>
 

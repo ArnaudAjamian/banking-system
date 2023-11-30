@@ -6,8 +6,8 @@ import os
 csv_file = "banking_system_user_data.csv"
 header = ["First Name", "Last Name", "Address", "Account Type", "Balance"]
 
-# # instantiate a CSV file with the designated headers (uncomment lines 11-14 for testing)
-# # user inputs will then be stored within this file
+# instantiate a CSV file with the designated headers (uncomment lines 11-14 for testing)
+# user inputs will then be stored within this file
 # if not os.path.exists(csv_file):
 #     with open(csv_file, "a", newline = "") as file:
 #         csv_writer = csv.writer(file)
@@ -31,14 +31,14 @@ while True:
         
     balance = int(input(f"Enter deposit amount: "))
 
-    # # save the collected user inputs to the 'banking_system.csv' file (uncomment lines 35-37 for testing)
+    # save the collected user inputs to the 'banking_system.csv' file (uncomment lines 35-37 for testing)
     # with open(csv_file, "a", newline = "") as file:
     #     csv_writer = csv.writer(file)
     #     csv_writer.writerow([first_name, last_name, address, account_type, balance])
 
     # generate instances of the Customer and Account classes based on user inputs
-    customer_1 = Customer(bank_name, first_name, last_name, address)
-    account_1 = Account(customer_1.bank_name, customer_1.first, customer_1.last, customer_1.address, account_type, balance)
+    customer_1 = Customer(first_name, last_name, address)
+    account_1 = Account(customer_1, account_type, balance)
  
     # nested 'while' loop enables users to perform multiple transactions in a single instance
     # ie. a customer may want to view their account balance first, before depositing or withdrawing funds
